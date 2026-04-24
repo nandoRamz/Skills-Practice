@@ -24,6 +24,21 @@ struct ContentView: View {
                 waterIntake: 54,
                 goal: 80
             )
+
+            NutritionSummaryView(
+                calories: 1_980,
+                proteinGrams: 132
+            )
+
+            SleepQualityView(
+                hoursSlept: 7.4,
+                sleepGoal: 8.0
+            )
+
+            StepGoalView(
+                steps: 8_250,
+                goal: 10_000
+            )
         }
         .padding()
     }
