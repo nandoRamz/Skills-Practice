@@ -7,13 +7,33 @@
 
 import SwiftUI
 
+struct BasicInfoView: View {
+    let title: String
+    let message: String
+
+    var body: some View {
+        VStack(spacing: 8) {
+            Text(title)
+                .font(.title2)
+                .fontWeight(.semibold)
+
+            Text(message)
+                .font(.body)
+                .foregroundStyle(.secondary)
+        }
+        .padding()
+        .frame(maxWidth: .infinity)
+        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+    }
+}
+
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            BasicInfoView(
+                title: "Welcome",
+                message: "This is a basic reusable SwiftUI view."
+            )
         }
         .padding()
     }
