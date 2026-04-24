@@ -7,32 +7,22 @@
 
 import SwiftUI
 
-struct BasicInfoView: View {
-    let title: String
-    let message: String
-
-    var body: some View {
-        VStack(spacing: 8) {
-            Text(title)
-                .font(.title2)
-                .fontWeight(.semibold)
-
-            Text(message)
-                .font(.body)
-                .foregroundStyle(.secondary)
-        }
-        .padding()
-        .frame(maxWidth: .infinity)
-        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-    }
-}
-
 struct ContentView: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 16) {
             BasicInfoView(
-                title: "Welcome",
-                message: "This is a basic reusable SwiftUI view."
+                title: "Fitness Tracker",
+                message: "Track your workouts and hydration for the day."
+            )
+
+            WorkoutSummaryView(
+                workoutsThisWeek: 4,
+                activeMinutes: 185
+            )
+
+            HydrationProgressView(
+                waterIntake: 54,
+                goal: 80
             )
         }
         .padding()
